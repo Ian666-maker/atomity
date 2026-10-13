@@ -1,0 +1,14 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: tenant-cloud-api
+  datasource:
+    url: jdbc:postgresql://localhost:54321/tenant_cloud_db
+    username: postgres
+    password: postgres
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
