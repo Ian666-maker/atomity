@@ -20,12 +20,11 @@
 ## 🚀 Getting Started
 
 ### Prerequisites
-* Java 21 SDK installed
-* Maven installed
+- Java 21 SDK installed
+- Gradle / Maven installed
 
 ### Running the Application
 1. Clone the repository:
-
-```bash
+   ```bash
    git clone [https://github.com/ian666-maker/atomity.git](https://github.com/ian666-maker/atomity.git)
    cd atomity
