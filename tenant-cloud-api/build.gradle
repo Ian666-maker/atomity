@@ -17,22 +17,26 @@ repositories {
 	mavenCentral()
 }
 
- dependencies {
+dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-security'
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-flyway'
-	implementation 'org.springframework.boot:spring-boot-starter-webmvc'
+	// 修正：Spring Boot 4 中标准 Web 模块名称为 spring-boot-starter-web
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+
+	// JWT 依赖
 	implementation 'io.jsonwebtoken:jjwt-api:0.12.5'
 	runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.12.5'
 	runtimeOnly 'io.jsonwebtoken:jjwt-jackson:0.12.5'
+
+	// PostgreSQL & Flyway 数据库支持
 	implementation 'org.flywaydb:flyway-database-postgresql'
 	runtimeOnly 'org.postgresql:postgresql'
-	testImplementation 'org.springframework.boot:spring-boot-starter-data-jpa-test'
-	testImplementation 'org.springframework.boot:spring-boot-starter-flyway-test'
-	testImplementation 'org.springframework.boot:spring-boot-starter-webmvc-test'
+
+	// 测试依赖修正（Spring Boot 4 统一使用标准的测试 starter 名称）
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
-
 
 tasks.named('test') {
 	useJUnitPlatform()
